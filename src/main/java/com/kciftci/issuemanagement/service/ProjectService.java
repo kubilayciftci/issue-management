@@ -1,5 +1,6 @@
 package com.kciftci.issuemanagement.service;
 
+import com.kciftci.issuemanagement.dto.ProjectDto;
 import com.kciftci.issuemanagement.entity.Project;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,7 +11,7 @@ public interface ProjectService {
 
     Project save(Project project);
 
-    Project getById(Long id);
+    ProjectDto getById(Long id);
 
     List<Project> getByProjectCode(String projectCode);
 
