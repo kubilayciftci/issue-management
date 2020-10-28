@@ -1,22 +1,28 @@
 package com.kciftci.issuemanagement.service;
 
-import com.kciftci.issuemanagement.entity.Project;
-import org.springframework.data.domain.Page;
+import com.kciftci.issuemanagement.dto.ProjectDto;
+import com.kciftci.issuemanagement.util.TPage;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
 public interface ProjectService {
 
-    Project save(Project project);
+    ProjectDto save(ProjectDto projectDto);
 
-    Project getById(Long id);
+    ProjectDto getById(Long id);
 
-    List<Project> getByProjectCode(String projectCode);
+    ProjectDto getByProjectCode(String projectCode);
 
-    List<Project> getByProjectCodeContains(String projectCode);
+    List<ProjectDto> getByProjectCodeContains(String projectCode);
 
-    Page<Project> getAllPagination(Pageable pageable);
+    TPage<ProjectDto> getAllPageable(Pageable pageable);
 
-    Boolean delete(Project project);
+    Boolean delete(ProjectDto project);
+
+    Boolean delete(Long id);
+
+    ProjectDto update(Long id, ProjectDto projectDto);
+
+    List<ProjectDto> getAll();
 }
