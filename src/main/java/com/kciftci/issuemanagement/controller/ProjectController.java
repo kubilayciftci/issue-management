@@ -2,16 +2,15 @@ package com.kciftci.issuemanagement.controller;
 
 import com.kciftci.issuemanagement.dto.ProjectDto;
 import com.kciftci.issuemanagement.service.implementation.ProjectServiceImpl;
+import com.kciftci.issuemanagement.util.ApiPaths;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.SwaggerDefinition;
-import io.swagger.annotations.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/project")
-@Api(value = "/project", description = "User APIs")
+@RequestMapping(ApiPaths.ProjectPaths.ISSUE_PATH)
+@Api(value = ApiPaths.ProjectPaths.ISSUE_PATH, description = "User APIs")
 public class ProjectController {
 
     private final ProjectServiceImpl projectServiceImpl;
