@@ -2,11 +2,14 @@ package com.kciftci.issuemanagement.controller;
 
 import com.kciftci.issuemanagement.dto.IssueDto;
 import com.kciftci.issuemanagement.service.implementation.IssueServiceImpl;
+import com.kciftci.issuemanagement.util.ApiPaths;
+import io.swagger.annotations.Api;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/issue")
+@RequestMapping(ApiPaths.IssuePaths.ISSUE_PATH)
+@Api(ApiPaths.IssuePaths.ISSUE_PATH)
 public class IssueController {
 
     private final IssueServiceImpl issueServiceImpl;
@@ -34,7 +37,7 @@ public class IssueController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Boolean> delete(@PathVariable(value = "id") Long id){
+    public ResponseEntity<Boolean> delete(@PathVariable(value = "id") Long id) {
         return ResponseEntity.ok(issueServiceImpl.delete(id));
     }
 
