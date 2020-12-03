@@ -10,11 +10,11 @@ public class ApiPaths {
     }
 
     public static final class ProjectPaths {
-        public static final String ISSUE_PATH = BASE_PATH + "/project";
+        public static final String PROJECT_PATH = BASE_PATH + "/project";
     }
 
     public static final class UserPaths {
-        public static final String ISSUE_PATH = BASE_PATH + "/users";
+        public static final String USER_PATH = BASE_PATH + "/users";
     }
 
 }
