@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(ApiPaths.ProjectPaths.PROJECT_PATH)
-@Api(value = ApiPaths.ProjectPaths.PROJECT_PATH, description = "User APIs")
+@Api(value = ApiPaths.ProjectPaths.PROJECT_PATH)
 @Slf4j
 public class ProjectController {
 
@@ -39,7 +39,6 @@ public class ProjectController {
         return ResponseEntity.ok(projectDto);
     }
 
-    //TODO Solve @Valid annotation problem and add it.
     @PostMapping
     @ApiOperation(value = "create project operation", response = ProjectDto.class)
     public ResponseEntity<ProjectDto> createProject(@RequestBody ProjectDto projectDto) {

@@ -17,10 +17,14 @@ import java.time.LocalDate;
 @EnableSwagger2
 public class SwaggerConfig {
 
+    public static final String TITLE = "Issue Management API Reference";
+    public static final String VERSION = "1.0.0";
+    public static final String BASE_PACKAGE="com.kciftci";
+
     ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Issue Management API Reference")
-                .version("1.0.0")
+                .title(TITLE)
+                .version(VERSION)
                 .build();
     }
 
@@ -29,7 +33,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select().paths(PathSelectors.any())
-                .apis(RequestHandlerSelectors.basePackage("com.kciftci"))
+                .apis(RequestHandlerSelectors.basePackage(BASE_PACKAGE))
                 .build()
                 .pathMapping("/")
                 .useDefaultResponseMessages(false)
