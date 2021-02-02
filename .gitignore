@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+
+src/webui/node_modules
