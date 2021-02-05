@@ -24,7 +24,6 @@ public class IssueController {
         return ResponseEntity.ok(projectDto);
     }
 
-    //TODO Solve @Valid annotation problem and add it.
     @PostMapping
     public ResponseEntity<IssueDto> createProject(@RequestBody IssueDto issueDto) {
         return ResponseEntity.ok(issueServiceImpl.save(issueDto));
